@@ -1,0 +1,21 @@
+.Center {
+  background: #ffffff;
+  border: 1px solid #c7c7cc;
+  width: 35px;
+  height: 35px;
+  border-radius: 17.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.Center:hover {
+  cursor: pointer;
+  border: 1px solid #5ac8fa;
+  box-shadow: 0 0 6px 0 #5ac8fa;
+}
+
+.Center:hover g {
+  stroke: #5ac8fa;
+}

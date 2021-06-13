@@ -1,0 +1,17 @@
+var nodeSchema = {
+  "id": "/node",
+  "type": "object",
+  "properties": {
+    "id": {"type": "string"},
+    "name": {"type": "string"},
+    "image": {"type": "string"},
+    "timestamp": {"type": "number"},
+    "weight": {"type": "integer"},
+    "style": {"type": "string"},
+    "children": {
+      "type": "array",
+      "items": {"$ref": "/node"}
+    } 
+  },
+  "required": ["id", "name", "timestamp"]
+}

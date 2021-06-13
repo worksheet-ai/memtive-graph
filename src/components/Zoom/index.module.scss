@@ -1,0 +1,78 @@
+.Zoom {
+  background: #ffffff;
+  border: 1px solid #c7c7cc;
+  border-radius: 17.5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  width: 35px;
+  height: 68px;
+}
+
+.Zoom:hover {
+  border-color: #5ac8fa;
+  box-shadow: 0 0 6px 0 #5ac8fa;
+}
+
+.ZoomSpacer {
+  background: #d6d5d7;
+  height: 1px;
+  width: 29px;
+  border-radius: 1px;
+}
+
+.ZoomIn {
+  cursor: pointer;
+}
+
+.ZoomOut {
+  cursor: pointer;
+}
+
+.ZoomIn:hover .ZoomPlusLeaf {
+  background: #5ac8fa;
+}
+
+.ZoomOut:hover .ZoomPlusLeaf {
+  background: #5ac8fa;
+}
+
+.ZoomMinus {
+  left: 0;
+  top: 7.5px;
+  position: absolute;
+  width: 15px;
+  height: 1px;
+  background: #8e8e93;
+  border-radius: 1px;
+}
+
+.ZoomPlus {
+  position: relative;
+  width: 15px;
+  height: 15px;
+}
+
+.ZoomPlusLeaf {
+  background: #8e8e93;
+}
+
+.ZoomPlusOne {
+  left: 0;
+  top: 7.5px;
+  position: absolute;
+  width: 15px;
+  height: 1px;
+  border-radius: 1px;
+}
+
+.ZoomPlusTwo {
+  left: 0;
+  top: 7.5px;
+  position: absolute;
+  width: 15px;
+  height: 1px;
+  border-radius: 1px;
+  transform: rotate(90deg);
+}
