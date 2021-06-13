@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
 import style from "./index.module.scss";
 
 import Back from "../Back";
@@ -36,8 +38,6 @@ class Graph extends React.Component {
 
   componentDidMount() {
     const nodes = Array.from(this.nodeContainer.current.querySelectorAll("[data-type='node']"))
-
-    console.log(nodes[0])
 
     this.setState(
       {
@@ -173,7 +173,7 @@ class Graph extends React.Component {
   };
 
   renderCenter = () => {
-    if (this.props.center == undefined || this.props.center) {
+    if (this.props.center) {
       return (
         <div className={style.MotionSpacer}>
           <Center onClick={this.resetCoordinates.bind(this)} />
@@ -191,6 +191,19 @@ class Graph extends React.Component {
       },
       () => {
         this.props.triggerBack();
+      }
+    );
+  };
+
+  triggerRoot = () => {
+    this.setState(
+      {
+        zoom: 1.0,
+        x_pos: 0,
+        y_pos: 0,
+      },
+      () => {
+        this.props.triggerRoot();
       }
     );
   };
@@ -216,7 +229,7 @@ class Graph extends React.Component {
         <div className={style.NavigationSpacer}>
           <Back
             single={true}
-            onClick={this.triggerBack.bind(this)}
+            onClick={this.triggerRoot.bind(this)}
             image={image}
           />
         </div>
@@ -533,5 +546,16 @@ class Graph extends React.Component {
     );
   }
 }
+
+Graph.propTypes = {
+  center: PropTypes.bool,
+  zoom: PropTypes.bool,
+  triggerBack: PropTypes.func,
+  triggerRoot: PropTypes.func,
+};
+
+Graph.defaultProps = {
+  center: true
+};
 
 export default Graph;

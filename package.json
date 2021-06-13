@@ -1,10 +1,10 @@
 {
   "name": "memtive-graph",
-  "version": "1.0.0",
+  "version": "0.0.3",
   "description": "Graph visualization tool for history",
   "author": "abhishekpratapa",
   "license": "MIT",
-  "repository": "abhishekpratapa/memtive-graph",
+  "repository": "worksheet-ai/memtive-graph",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",

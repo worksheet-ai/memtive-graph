@@ -4,6 +4,10 @@
 
 [![NPM](https://img.shields.io/npm/v/memtive-graph.svg)](https://www.npmjs.com/package/memtive-graph) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+## Example
+
+Here's an [example](https://worksheet-ai.github.io/memtive-graph/) of the library
+
 ## Install
 
 ```bash
@@ -15,7 +19,6 @@ npm install --save memtive-graph
 ```jsx
 import React from 'react'
 
-import style from './App.module.scss'
 import google from './assets/google.png'
 
 import { Graph, Node } from 'memtive-graph'
@@ -46,10 +49,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className={style.App}>
+      <div style={{
+        'width': '100vw',
+        'height': '100vh'
+      }}>
         <Graph
           triggerBack={this.back.bind(this)}
-          triggerRoot={this.root.bind(this)}>
+          triggerRoot={this.root.bind(this)}
+          center={true}
+          zoom={false}>
           <Node
             text={"Roam Research"}
             identifier={"9b9ee7be-811d-4213-8756-215e89434b04"}
@@ -87,6 +95,27 @@ class App extends React.Component {
 
 export default App
 ```
+
+## Components
+
+#### Node
+
+| Props | Required | Type | Default Value | Description |
+| --- | --- | --- | --- | --- |
+| text | :white_check_mark: | `String` | `<none>` | The text of the node  |
+| identifier | :white_check_mark: | `String` | `<none>` | A unique identifier for each node. Note another node may not have the same identifier  |
+| active |  | `Boolean` | `false` |  Denotes whether the Node is Active |
+| image |  | `String` | `false` |  A source url for a favicon style image for the node |
+| onClick |  | `Function` | `<none>` |  The onClickHandler |
+
+#### Graph
+
+| Props | Required | Type | Default Value | Description |
+| --- | --- | --- | --- | --- |
+| center |  | `Boolean` | `True` | Show the center button  |
+| zoom |  | `Boolean` | `False` |  Show the zoom buttons  |
+| triggerBack |  | `Function` | `<none>` |  Primary back button |
+| triggerRoot |  | `String` | `<none>` |  Secondary back button |
 
 ## License
 

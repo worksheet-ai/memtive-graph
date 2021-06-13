@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
 import style from "./index.module.scss";
 
 class Node extends React.Component {
@@ -37,5 +39,13 @@ class Node extends React.Component {
     }
   }
 }
+
+Node.propTypes = {
+  text: PropTypes.string.isRequired,
+  identifier: PropTypes.string.isRequired,
+  active: PropTypes.bool,
+  onClick: PropTypes.func,
+  image: PropTypes.string,
+};
 
 export default Node;

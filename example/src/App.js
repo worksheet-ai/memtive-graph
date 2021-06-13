@@ -16,11 +16,11 @@ class App extends React.Component {
   }
 
   back() {
-    alert("Back Button Clicked")
+    window.history.back();
   }
 
   root() {
-    alert("Root Button Clicked")
+    alert("Secondary Back Button Clicked")
   }
 
   triggerActive() {
